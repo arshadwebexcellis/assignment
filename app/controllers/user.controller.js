@@ -73,9 +73,9 @@ exports.update = (req, res) => {
     .then((data) => {
       if (!data) {
         res.status(404).send({
-          message: `Cannot update User with id=${id}. Maybe User was not found!`,
+          message: `User does not exist.`,
         });
-      } else res.send({ message: "User was updated successfully." });
+      } else res.send({ message: "User updated successfully." });
     })
     .catch((err) => {
       res.status(500).send({
@@ -92,11 +92,11 @@ exports.delete = (req, res) => {
     .then((data) => {
       if (!data) {
         res.status(404).send({
-          message: `Cannot delete Tutorial with id=${id}. Maybe User was not found!`,
+          message: `User does not exist.`,
         });
       } else {
         res.send({
-          message: "User was deleted successfully!",
+          message: "User deleted successfully.",
         });
       }
     })
